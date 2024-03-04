@@ -7,7 +7,7 @@ dotenv.load_dotenv()
 port = os.getenv('PORT', '8080')
 
 workers = int(os.getenv('GUNICORN_PROCESSES', '2'))
-threads = int(os.getenv('GUNICORN_THREADS', '4'))
+# threads = int(os.getenv('GUNICORN_THREADS', '4'))
 bind = f"0.0.0.0:{port}"
 
 forwarded_allow_ips = '*'

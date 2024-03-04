@@ -19,7 +19,7 @@ RUN pip install --upgrade pip && pip install poetry==1.6.1
 RUN mkdir /app
 COPY . /app
 WORKDIR /app
-EXPOSE 8080
+# EXPOSE 8080
 RUN poetry config virtualenvs.create false
 RUN poetry install
 ENTRYPOINT ["gunicorn", "--config", "gunicorn_config.py", "main:app"]
