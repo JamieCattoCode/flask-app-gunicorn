@@ -22,4 +22,4 @@ WORKDIR /app
 # EXPOSE 8080
 RUN poetry config virtualenvs.create false
 RUN poetry install
-ENTRYPOINT ["gunicorn", "--config", "gunicorn_config.py", "main:app"]
+ENTRYPOINT gunicorn -w 2 -b :${PORT:-8080} main:app
